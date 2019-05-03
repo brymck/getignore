@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+if [ $# -eq 0 ]; then
+    echo 'Usage: getignore NAME'
+    echo
+    echo '  where NAME is one of the available templates:'
+    echo
+    curl -sSL https://api.github.com/repos/github/gitignore/git/trees/master \
+        | grep -oh '\"path\": \"[^"]\+\.gitignore\"' \
+        | cut -d '"' -f 4 \
+        | cut -d . -f 1 \
+        | column
+    echo
+    echo 'Currently this only supports the top level of the gitignore repo. Oh well.'
+    exit 0
+fi
+
+curl -o .gitignore -ssL "https://raw.githubusercontent.com/github/gitignore/master/$1.gitignore"
