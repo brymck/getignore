@@ -1,6 +1,6 @@
 # getignore
 
-Command line utility for grabbing .gitignores from github.com/github/gitignore
+Command line utility for creating a `.gitignore` based on [github.com/github/gitignore](https://github.com/github/gitignore).
 
 ## Usage
 
