@@ -14,7 +14,7 @@ chmod +x getignore
 You can then run
 
 ```bash
-./getignore
+getignore
 ```
 
 to see available templates, and something like
